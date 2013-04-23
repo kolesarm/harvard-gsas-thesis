@@ -1,0 +1,19 @@
+* gsasthesis
+** LaTeX2e class for publishing a PhD thesis according to Harvard GSAS requirements
+
+=gsasthesis.cls= modifies the appearance of the standard report class to satisfy
+the Harvard GSAS requirements, published at
+
+http://www.gsas.harvard.edu/images/stories/pdfs/form%20of%20dissertation.pdf
+
+** Download
+There are two options:
+1. pull directly from GitHub
+2. download a zip archive
+   https://github.com/kolesarm/harvard-gsas-thesis/archive/master.zip
+
+** Usage
+The file =thesis.tex= contains a sample thesis, from which three sample thesis
+chapters and an appendix are included. It compiles with =pdflatex= to produce a
+sample =thesis.pdf= document. The =.tex= files contain a number of specific
+pointers that should help to adapt the sample file to your needs.

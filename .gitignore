@@ -1,7 +1,3 @@
-# ignore git.pdf, but not pdf in general, in case we have .pdf pictures say
-git.pdf
-gitInfo.tex
-
 # general LaTeX
 *.acn
 *.acr
