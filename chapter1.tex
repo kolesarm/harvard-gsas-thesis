@@ -1,0 +1,45 @@
+\section{Introduction}
+\label{section_intro}
+
+Block Quotations are automatically single spaced. Here's a dummy quotation:
+\begin{quotation}
+  \blindtext
+\end{quotation}
+
+\section{Motivating Example}
+Table \ref{tab:label} shows stuff. \blindtext
+\begin{table}[tp]
+  \centering
+  \caption[Table heading]{Table heading goes on top of the table}
+  \label{tab:label}
+  \renewcommand{\arraystretch}{1.2} % single-spacing
+  \begin{tabular}{@{}lll@{}}
+    Tables & should \\
+    Be & double\\
+    spaced & unless & \\
+    they are & long\\
+    This & table\\
+    is & getting\\
+    long\\
+    so & I\\
+    manually\\
+    changed &it \\
+    to & single\\
+    spacing
+  \end{tabular}
+\end{table}
+Table \ref{tab:label2} shows stuff also.
+\begin{table}[tp]
+  \centering
+  \caption{Use consistent format for captions}
+  \label{tab:label2}
+  \begin{tabular}{@{}lllll@{}}
+    Table & should & be & placed\\
+    within & text, & as & close\\
+    to & its first mention\\
+    as & possible. & Not at the end\\
+    of a chapter & or dissertation
+  \end{tabular}
+\end{table}
+
+\blindtext[2]

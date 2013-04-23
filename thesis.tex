@@ -1,0 +1,97 @@
+\documentclass[12pt]{gsasthesis} % 10,11 and 12 pt fonts are fine
+
+% Include packages you want. The gsasthesis style file already includes
+% packages: setspace, tocbibind, geometry, and appendix
+
+\usepackage[sort, numbers, authoryear]{natbib}
+\usepackage[sc]{mathpazo}
+\usepackage{courier}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage[english]{babel}
+\usepackage{blindtext}
+\usepackage{amsmath}
+
+
+% Slightly tweak font spacing for aesthetics
+\usepackage{microtype}
+
+
+% Nicer captions
+\RequirePackage[font=small,format=plain,labelfont=bf,textfont=it]{caption}
+\addtolength{\abovecaptionskip}{1ex}
+\addtolength{\belowcaptionskip}{1ex}
+
+
+
+% Compulsory fields
+\title{Essays on Thesis-formatting}
+\author{Econ Gradstudent} % full name as it appears on your GSAS record
+\degreename{Doctor of Philosophy}
+\degreefield{Thesis-formatting} % Official name of subject as listed in GSAS
+                                % handbook
+\department{The Department of Economics} % official name of department
+\degreemonth{April} % Month of Defense (i.e. month when DAC was signed)
+\degreeyear{2013}
+\principaladvisor{Professor John Principal}
+
+% Optionally, you can add a second advisor, but you can't have three
+\secondadvisor{Professor George Secondary}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%% FRONTMATTER %%%%%%%%%%%%%%%%
+
+\pagenumbering{roman} % GSAS wants roman for frontmatter
+
+% the following four pages are required in that order
+\thesistitlepage
+\copyrightpage
+\begin{abstract}
+  An abstract should be less than 350 words. Here's some filler text. \blindtext
+\end{abstract}
+\tableofcontents % Table of contents
+
+% The rest of the front matter: Lists of tables, figures, dedication and
+% acknowledment is optional
+\listoftables
+\listoffigures
+\begin{acknowledgments}
+  \blindtext
+\end{acknowledgments}
+\begin{dedication}
+  To my parents
+\end{dedication}
+
+
+%%%%%%%%%%%%%%%% MAIN BODY %%%%%%%%%%%%%%%%
+\pagenumbering{arabic} % reset page numbering and switch to arabic
+
+\chapter{Hook}\label{ch:1}
+\input{chapter1}
+
+\chapter{Line}\label{ch:2}
+\input{chapter2}
+
+\chapter{Sinker}\label{ch:3}
+\input{chapter3}
+
+%%%%%%%%%%%%%%%% BACK MATTER %%%%%%%%%%%%%%%%
+
+% Put appendices, bibliography, and supplemental materials here
+
+% The bibliography may be single spaced within each entry, but must be
+% double-spaced between each entry. Most bibliography styles do that.
+\begin{singlespacing}
+  % I like "References" better than "Bibliography"
+  \renewcommand{\bibname}{References}
+
+  \bibliographystyle{ecca}
+  \bibliography{references}
+\end{singlespacing}
+
+\input{appendix}
+
+
+
+\end{document}
