@@ -18,23 +18,21 @@
 
 
 % 2. Load extra packages
+
+% Load the report class and send it all class options
 \LoadClassWithOptions{report}
 
-% page margins should be at least 1 inch.
-\RequirePackage[margin={1in}]{geometry}
-
-% dissertation should be double-spaced throughout nodisplayskipstretch makes
-% sure equations are single-spaced. Otherwise there array-like objects look
-% rather ugly. Need to set double-spacing for tables manually using
-% \renewcommand{\arraystretch}{2} inside the table environment
+% Dissertation should be double-spaced throughout nodisplayskipstretch makes
+% sure equations are single-spaced. Otherwise array-like objects (say pmatrix)
+% look rather ugly.
 \RequirePackage[nodisplayskipstretch,doublespacing]{setspace}
+% This makes tables single-spaced by default. Since they are supposed to be
+% double-spaced unless they are too long, need to set double-spacing for tables
+% manually using \renewcommand{\arraystretch}{2} inside the table environment
 
-
-% add references, to Table of Contents, but not TOC itself, or list of tables
+% Add references, to Table of Contents, but not TOC itself, or list of tables
 % and figures
 \RequirePackage[nottoc,notlot,notlof]{tocbibind}
-\RequirePackage[titletoc]{appendix}
-
 
 % 3. Required and Optional fields
 \newcommand\degreename[1]{\renewcommand\@degreename{#1}}
@@ -131,32 +129,30 @@
 }%
 {\clearpage}
 
+% GSAS: "Table of contents, lists of figures and tables can be single-spaced".
+% Let's redefine them to be single-spaced.
+
+% Save the latex commands
 \let\LaTeXTOC\tableofcontents
+\let\LaTeXLOT\listoftables
+\let\LaTeXLOF\listoffigures
+
+% Redefine them
 \renewcommand{\tableofcontents}%
 {
-  \begin{spacing}{1.2} % Single-spaced
-    % Hacking the formatting, could use tocloft instead
-    \renewcommand{\contentsname}{\protect\centering\protect\Large Contents}
+  \begin{spacing}{1.2} % 1.2 looks nicer than 1
     \LaTeXTOC
   \end{spacing}
 }
-
-\let\LaTeXLOT\listoftables
 \renewcommand{\listoftables}%
 {
-  \begin{spacing}{1.2} % Single-spaced
-    % Hacking the formatting, could use tocloft instead
-    \renewcommand{\listtablename}{\protect\centering\protect\Large List of Tables}
+  \begin{spacing}{1.2}
     \LaTeXLOT
   \end{spacing}
 }
-
-\let\LaTeXLOF\listoffigures
 \renewcommand{\listoffigures}%
 {
-  \begin{spacing}{1.2} % Single-spaced
-    % Hacking the formatting, could use tocloft instead
-    \renewcommand{\listfigurename}{\protect\centering\protect\Large List of Figures}
+  \begin{spacing}{1.2}
     \LaTeXLOF
   \end{spacing}
 }
