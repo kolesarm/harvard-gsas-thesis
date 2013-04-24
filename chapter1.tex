@@ -12,7 +12,8 @@ Table \ref{tab:label} shows stuff. \blindtext
   \centering
   \caption[Table heading]{Table heading goes on top of the table}
   \label{tab:label}
-  \renewcommand{\arraystretch}{1.2} % single-spacing
+  \renewcommand{\arraystretch}{1.2} % single-spacing 1.2 is visually more
+                                    % appealing than 1
   \begin{tabular}{@{}lll@{}}
     Tables & should \\
     Be & double\\
@@ -23,9 +24,9 @@ Table \ref{tab:label} shows stuff. \blindtext
     long\\
     so & I\\
     manually\\
-    changed &it \\
+    set &it \\
     to & single\\
-    spacing
+    spacing using
   \end{tabular}
 \end{table}
 Table \ref{tab:label2} shows stuff also.
@@ -33,6 +34,7 @@ Table \ref{tab:label2} shows stuff also.
   \centering
   \caption{Use consistent format for captions}
   \label{tab:label2}
+  \renewcommand{\arraystretch}{2} % double-spacing
   \begin{tabular}{@{}lllll@{}}
     Table & should & be & placed\\
     within & text, & as & close\\

@@ -23,9 +23,12 @@
 % page margins should be at least 1 inch.
 \RequirePackage[margin={1in}]{geometry}
 
-\RequirePackage{setspace} % custom spacing
-\doublespacing % dissertation should be double-spaced throughout
-\renewcommand{\arraystretch}{2} % Tables are double-spaced by default
+% dissertation should be double-spaced throughout nodisplayskipstretch makes
+% sure equations are single-spaced. Otherwise there array-like objects look
+% rather ugly. Need to set double-spacing for tables manually using
+% \renewcommand{\arraystretch}{2} inside the table environment
+\RequirePackage[nodisplayskipstretch,doublespacing]{setspace}
+
 
 % add references, to Table of Contents, but not TOC itself, or list of tables
 % and figures
@@ -72,8 +75,8 @@
       in partial fulfillment of the requirements\\
       for the degree of\\
       \@degreename\\
-      in the subject of\\[1em]
-      \@degreefield\\[1em]
+      in the subject of\\
+      \@degreefield\\[2em]
       Harvard University\\
       Cambridge, Massachusetts\\
       \@degreemonth\ \@degreeyear
@@ -175,14 +178,15 @@
 }
 {\end{quotation}\clearpage}
 
-% I like "References" better than "Bibliography"
-\renewcommand{\bibname}{References}
-
-% 5. Odds and ends
+% 4. Odds and ends
 
 % Quotations should be single-spaced
 \expandafter\def\expandafter\quote\expandafter{\quote\singlespacing}
 \expandafter\def\expandafter\quotation\expandafter{\quotation\singlespacing}
+
+% Footnotes should single-spaced (setspace default), but there should be
+% double-spacing between footnotes.
+\setlength{\footnotesep}{0.8\baselineskip}
 
 % Indicate that LaTeX can stop reading this file. LaTeX will ignore anything
 % after this line. Not required, but good practice.

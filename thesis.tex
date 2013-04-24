@@ -11,11 +11,9 @@
 \usepackage[english]{babel}
 \usepackage{blindtext}
 \usepackage{amsmath}
-
-
-% Slightly tweak font spacing for aesthetics
-\usepackage{microtype}
-
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+\usepackage[stable,multiple]{footmisc} % Allows multiple footnotes one after the
+                                % other and footnotes in section titles
 
 % Nicer captions
 \RequirePackage[font=small,format=plain,labelfont=bf,textfont=it]{caption}
@@ -23,8 +21,8 @@
 \addtolength{\belowcaptionskip}{1ex}
 
 
+%%%%%%%%%%%%%%%% COMPULSORY FIELDS %%%%%%%%%%%%%%%%
 
-% Compulsory fields
 \title{Essays on Thesis-formatting}
 \author{Econ Gradstudent} % full name as it appears on your GSAS record
 \degreename{Doctor of Philosophy}
@@ -67,10 +65,10 @@
 %%%%%%%%%%%%%%%% MAIN BODY %%%%%%%%%%%%%%%%
 \pagenumbering{arabic} % reset page numbering and switch to arabic
 
-\chapter{Hook}\label{ch:1}
+\chapter{Hook\footnote{Co-authored with my advisor}}\label{ch:1}
 \input{chapter1}
 
-\chapter{Line}\label{ch:2}
+\chapter{Line\footnote{Co-authored with my other advisor}}\label{ch:2}
 \input{chapter2}
 
 \chapter{Sinker}\label{ch:3}
@@ -91,7 +89,5 @@
 \end{singlespacing}
 
 \input{appendix}
-
-
 
 \end{document}
