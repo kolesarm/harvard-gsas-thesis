@@ -1,6 +1,10 @@
 \documentclass[11pt]{gsasthesis} % 10,11 and 12pt fonts allowed
 
 %%%%%%%%%%%%%%%% PACKAGES YOU PROBABLY WANT %%%%%%%%%%%%%%%%
+% Include packages you want. The gsasthesis style file already includes
+% packages "setspace" and "tocbibind".
+
+\usepackage{etex} % extend the number of registers
 
 % GSAS: "all margins should be at least 1 inch."
 \usepackage[margin={1.2in}]{geometry}
@@ -13,22 +17,29 @@
 % geometry package, as in
 % \usepackage[top=1in,left=1in,vmarginratio=2:3,hmarginratio=2:5,twoside]{geometry}
 
-% Appendix package
+% Appendix package. Not necessary, but it does make managing appendices easier
 \usepackage[titletoc]{appendix}
 
-% Include packages you want. The gsasthesis style file already includes
-% packages: setspace, tocbibind, geometry, and appendix
-
 %%%%%%%%%%%%%%%% PACKAGES MAY WANT %%%%%%%%%%%%%%%%
-\usepackage[sort, numbers, authoryear]{natbib}
+\usepackage{natbib} % references
+
+% fonts that are nicer than defaults
 \usepackage[sc]{mathpazo}
 \usepackage{courier}
+
+% Use 8-bit encoding that has 256 glyphs, pretty please
 \usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage[T1]{fontenc}
+
+% babel is required for blindtext, which generates random text
 \usepackage[english]{babel}
 \usepackage{blindtext}
+
+% math support
 \usepackage{amsmath}
-\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+
+% Slightly tweak font spacing for aesthetics
+\usepackage{microtype}
 
 % You need the footmisc package with the stable option if you want to have
 % footnotes inside section titles, for example to say that a particular chapter
@@ -99,6 +110,11 @@
 \pagenumbering{arabic} % reset page numbering and switch to arabic
 
 % Introductory chapter
+% Don't number the intro chapter, but add to to the table of contents
+\addcontentsline{toc}{chapter}{Introduction}
+\chapter*{Introduction}\label{ch:intro}
+\input{intro}
+
 
 \chapter{Hook\footnote{Co-authored with my advisor}}\label{ch:1}
 \input{chapter1}
