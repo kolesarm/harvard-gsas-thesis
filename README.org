@@ -1,5 +1,5 @@
 * gsasthesis
-** LaTeX2e class for publishing a PhD thesis according to Harvard GSAS requirements
+** LaTeX2e class for publishing a PhD thesis to comply with Harvard GSAS requirements
 
 =gsasthesis.cls= modifies the appearance of the standard report class to satisfy
 the Harvard GSAS requirements, published at
@@ -8,12 +8,60 @@ http://www.gsas.harvard.edu/images/stories/pdfs/form%20of%20dissertation.pdf
 
 ** Download
 There are two options:
-1. pull directly from GitHub
-2. download a zip archive
+1. pull/clone directly from GitHub
+2. download a zip archive of the latest version
    https://github.com/kolesarm/harvard-gsas-thesis/archive/master.zip
 
 ** Usage
-The file =thesis.tex= contains a sample thesis, from which three sample thesis
-chapters and an appendix are included. It compiles with =pdflatex= to produce a
-sample =thesis.pdf= document. The =.tex= files contain a number of specific
-pointers that should help to adapt the sample file to your needs.
+The file =thesis.tex= contains a sample thesis, from which and introduction and
+three sample thesis chapters and an appendix are included. It compiles with
+=pdflatex= to produce a sample =thesis.pdf= document. The =.tex= files contain a
+number of specific pointers that should help to adapt the sample file to your
+needs. Keep the class file, =gsasthesis.cls= in the same directory as
+=thesis.tex= so that =pdflatex= can find it when compiling the document.
+
+GSAS requires that all supplementary materials go to one appendix at the end of
+the thesis, rather than at the end of each chapter. An easy way to deal with
+this is to create an appendix chapter for each thesis chapter and dump them all
+into =appendix.tex=.
+
+*** Class options
+=gsasthesis.cls= is extends the standard report class, and passes all options to
+report. Therefore, options =12pt=, =10pt=, =draft=, =a4paper=, etc behave like
+in the =report= class.
+
+** Tips
+- Continuous footnote numbering :: footnote numbering is reset every chapter by
+     default. If you want it continuous throughout the document put the
+     following code into the preamble:
+     #+BEGIN_SRC LaTeX
+     \usepackage{chngcntr}
+     \counterwithout{footnote}{chapter}
+     #+END_SRC
+- Big tables and figures :: Use the =rotating= package and the =sidewaysfigure=
+     and =sidewaystable= environments (instead of =table= and =figure=) to
+     rotate tables and figure 90 degrees. Use the =longtable= package and the
+     =longtable= environment (instead of =tabular=) for long tables that are
+     longer than one page. The sample thesis has examples of how to make it
+     work.
+- Read through the comments in the =.tex= files, they contain other useful
+  pointers.
+
+** Alternatives
+- Davide Cantoni and Halla Yang wrote a similar class, [[http://davidecantoni.net/misc.html][=harvardeconthesis.cls=]],
+  which writes the class file from scratch. The disadvantage of this approach is
+  that the class file needs to define all sectioning commands such as
+  =\section=, define all options that can be passed to class, such as =12pt= or
+  =draft=, default spacing, etc. This makes it hard to know which commands have
+  been modified relative to the article or report class and, or which have not
+  been defined, which may result in unexpected behaviour in some scenarios. In
+  addition, the =gsasthesis.cls= file solves the open bugs present in the
+  =harvardeconthesis.cls= class. An advantage of =harvardeconthesis= is that it
+  has worked for Davide, Halla and many others, so it should work for most
+  people (although some GSAS requirements have changed since, so you may need to
+  tweak it!).
+- Scott Kominers hacked Alex Barnett's huthesis.cls format (see
+  http://www.math.dartmouth.edu/~ahb/thesis/format.html). Like
+  =harvardeconthesis=, =huthesis= writes the class file from scratch
+- If you have XeTeX installed, you can also try
+  https://github.com/suchow/LaTeX-template-for-Harvard-dissertation
