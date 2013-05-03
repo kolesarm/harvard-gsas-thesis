@@ -21,7 +21,15 @@
 \usepackage[titletoc]{appendix}
 
 %%%%%%%%%%%%%%%% PACKAGES MAY WANT %%%%%%%%%%%%%%%%
-\usepackage{natbib} % references
+
+% sideways tables and figures
+\usepackage{rotating}
+
+% tables that spill over multiple pages
+\usepackage{longtable}
+
+% references
+\usepackage{natbib}
 
 % fonts that are nicer than defaults
 \usepackage[sc]{mathpazo}
@@ -56,14 +64,15 @@
 
 %%%%%%%%%%%%%%%% COMPULSORY FIELDS %%%%%%%%%%%%%%%%
 
-\title{Essays on Thesis-formatting}
-\author{Econ Gradstudent} % full name as it appears on your GSAS record
+\title{Essays on Thesis-formatting} % needs to match title on DAC
+\author{Econ Gradstudent} % full name as it appears on your GSAS record, needs
+                          % to match name on DAC
 \degreename{Doctor of Philosophy}
 \degreefield{Thesis-formatting} % Official name of subject as listed in GSAS
                                 % handbook
 \department{The Department of Economics} % official name of department
 \degreemonth{April} % Month of Defense (i.e. month when DAC was signed)
-\degreeyear{2013}
+\degreeyear{2013} % Year the DAC was signed
 \principaladvisor{Professor John Principal}
 
 % Optionally, you can add a second advisor, but you can't have three
@@ -95,7 +104,7 @@
 \tableofcontents % Table of contents
 
 % The rest of the front matter: Lists of tables, figures, dedication and
-% acknowledment is optional
+% acknowledment is optional. Comment out whatever you don't like
 \listoftables
 \listoffigures
 \begin{acknowledgments}
@@ -109,7 +118,8 @@
 %%%%%%%%%%%%%%%% MAIN BODY %%%%%%%%%%%%%%%%
 \pagenumbering{arabic} % reset page numbering and switch to arabic
 
-% Introductory chapter
+% Introductory chapter. Comment out if you don't have an intro chapter, but I
+% think most committees expect you to have one.
 % Don't number the intro chapter, but add to to the table of contents
 \addcontentsline{toc}{chapter}{Introduction}
 \chapter*{Introduction}\label{ch:intro}
@@ -136,6 +146,7 @@
   % I like "References" better than "Bibliography"
   \renewcommand{\bibname}{References}
 
+  % Any bibliohgraphy style that leaves space between entries is fine
   \bibliographystyle{ecca}
   \bibliography{references}
 \end{singlespacing}

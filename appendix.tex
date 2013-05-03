@@ -20,14 +20,53 @@ Equivalence relation
 
 \section{Proofs}
 
-\section{Supplementary Figures}
+\section{Supplementary Tables and Figures}
+\begin{longtable}{cc}
+% Caption to appear on the first page and in the list of tables
+\caption[Optional Short caption (used in list of tables)]{A long table} \label{grid_mlmmh} \\
 
-\begin{figure}[ht]
+Heading that appears & on first page only\\
+\hline
+\endfirsthead
+\caption[]{(continued)}\\ % Caption to appear on subsequent pages. GSAS requires
+                          % that if a table spills over multiple pages, it
+                          % contains the (continued) label
+
+Heading that appears & on all pages\\
+\hline
+\endhead
+% optional footer
+\hline \multicolumn{2}{r}{{Continued on next page}} \\
+\endfoot
+% footer to appear on tha last page (empty)
+\endlastfoot
+
+Contrary to popular & belief, Lorem Ipsum \\ is & not \\ simply &
+random \\ text &. It \\ has & roots \\ in & a \\ piece & of \\ classical & Latin
+\\ literature & from \\ 45 & BC \\, making & it \\ over & 2000 \\ years old. Richard & Mc \\Clintock &, a \\ Latin & professor \\ at & Hampden \\-Sydney
+& College \\ in & Virginia \\, looked & up \\ one & of \\ the & more
+\\obscure & Latin \\ words &, consectetur \\, from & a \\ Lorem & Ipsum \\
+passage &, and \\ going & through \\ the & cites \\ of & the word in \\
+classical & literature , discovered the \\ undoubtable & source. Lorem Ipsum
+\\ comes & from \\ sections & 1 \\.10 &.32 \\ and & 1 \\.10 &.33 \\ of
+&"de \\ Finibus & Bonorum \\ et & Malorum \\" (The & Extremes \\ of & Good \\
+and & Evil \\) by & Cicero \\, written & in \\ 45 & BC \\. This & book \\ is & a
+\\ treatise & on \\ the & theory \\ of & ethics \\, very & popular \\ during
+&the \\ Renaissance &. The \\ first & line \\ of & Lorem \\ Ipsum, "Lorem ipsum
+& dolor \\ sit & amet \\..", comes from a & line \\ in & section
+1.10.32.\\
+\end{longtable}
+
+
+\begin{sidewaysfigure}
   \centering Supplementary figures and tables should be placed in the appendix,
-  not at the end ofa chapter
+  not at the end of a chapter. To rotate big tables and figures $90^{\circ}$,
+  use the rotating package and the sidewaystable and sidewaysfigure
+  environments. This ensures that the figure and caption get rotated, but the
+  page number stays at the bottom of the page.
   \caption{Supplementary Figure}
   \label{fig:figuresup1}
-\end{figure}
+\end{sidewaysfigure}
 
 \begin{figure}[ht]
   \centering
