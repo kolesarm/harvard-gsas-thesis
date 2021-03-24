@@ -101,21 +101,18 @@
   \clearpage
   % Standard spacing for the header
   \begin{spacing}{1.2}
-    \begin{minipage}[t]{0.46\textwidth}
+    \begin{minipage}[t]{0.7\textwidth}
       \begin{flushleft}
         \ifx\@secondadvisor\undefined
-        \emph{Dissertation Advisor:}\\
-        {\bfseries\@principaladvisor}
+        Dissertation Advisor: \@principaladvisor
         \else
-        \emph{Dissertation Advisors:}\\
-        {\bfseries\@principaladvisor\\\@secondadvisor}
+        Dissertation Advisors: \@principaladvisor, \@secondadvisor
         \fi
       \end{flushleft}
     \end{minipage}
-    \begin{minipage}[t]{0.46\textwidth}
+    \begin{minipage}[t]{0.3\textwidth}
       \begin{flushright}
-        \emph{Author:} \\
-        {\bfseries\@author}
+        \@author
       \end{flushright}
     \end{minipage}
     \vspace{2em}
