@@ -64,4 +64,4 @@ in the =report= class.
   http://www.math.dartmouth.edu/~ahb/thesis/format.html). Like
   =harvardeconthesis=, =huthesis= writes the class file from scratch
 - If you have XeTeX installed, you can also try
-  https://github.com/suchow/LaTeX-template-for-Harvard-dissertation
+  https://github.com/suchow/LaTeX-template-for-Harvard-dissertation or https://github.com/weiying-robotic/Harvard-GSAS-PhD-Dissertation-Template
